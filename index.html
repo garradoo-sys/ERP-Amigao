@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#c6000b" />
+  <title>Amigão ERP</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section id="loginView" class="login-view">
+    <div class="login-brand">
+      <div class="brand-top">
+        <img src="assets/logo-amigao.png" class="brand-logo" alt="Amigão Peças e Serviços" />
+        <span class="brand-chip">Gestão inteligente para sua oficina</span>
+      </div>
+      <div class="welcome-copy">
+        <span class="eyebrow">Olá! Eu sou o Mascote</span>
+        <h1>Seja <em>bem-vindo</em> ao Amigão ERP!</h1>
+        <p>Clientes, veículos, estoque e ordens de serviço organizados em um só lugar.</p>
+        <div class="login-benefits">
+          <span>✓ Segurança</span><span>✓ Agilidade</span><span>✓ Controle</span>
+        </div>
+      </div>
+      <img src="assets/mascote-amigao.png" class="login-mascot" alt="Mascote Amigão" />
+    </div>
+
+    <div class="login-side">
+      <form id="loginForm" class="login-card">
+        <img src="assets/logo-amigao.png" class="login-card-logo" alt="Amigão" />
+        <div class="login-heading">
+          <span>ACESSO AO SISTEMA</span>
+          <h2>Entre na sua conta</h2>
+          <p>Use seus dados para começar o dia.</p>
+        </div>
+        <label>Usuário
+          <div class="input-shell"><span>👤</span><input name="username" value="admin" autocomplete="username" required /></div>
+        </label>
+        <label>Senha
+          <div class="input-shell"><span>🔒</span><input id="password" name="password" type="password" value="admin123" autocomplete="current-password" required /><button type="button" id="togglePassword" class="eye" aria-label="Mostrar senha">◉</button></div>
+        </label>
+        <div class="login-options"><label class="remember"><input type="checkbox" checked /> Lembrar-me</label><span>Ambiente seguro</span></div>
+        <button type="submit" class="login-button">ENTRAR NO AMIGÃO ERP</button>
+        <p id="loginError" class="error"></p>
+        <small class="demo-access">Acesso inicial: admin / admin123</small>
+      </form>
+    </div>
+  </section>
+
+  <div id="appView" class="app hidden">
+    <aside class="sidebar">
+      <div class="side-brand"><img src="assets/logo-amigao.png" alt="Amigão" /></div>
+      <nav id="mainNav">
+        <button data-page="dashboard" class="active"><span>▦</span> Dashboard</button>
+        <button data-page="customers"><span>👥</span> Clientes</button>
+        <button data-page="vehicles"><span>🚘</span> Veículos</button>
+        <button data-page="orders"><span>📋</span> Ordens de Serviço</button>
+        <button data-page="products"><span>📦</span> Produtos / Estoque</button>
+        <button data-page="purchases"><span>🛒</span> Compras</button>
+        <button data-page="sales"><span>🏷</span> Vendas / Orçamentos</button>
+        <button data-page="finance"><span>💰</span> Financeiro</button>
+        <button data-page="cash"><span>💼</span> Caixa</button>
+        <button data-page="reports"><span>📊</span> Relatórios</button>
+        <button data-page="agenda"><span>📅</span> Agenda</button>
+        <button data-page="whatsapp"><span>☏</span> WhatsApp <b class="new-tag">Novo</b></button>
+        <button data-page="settings"><span>⚙</span> Configurações</button>
+        <button data-page="users"><span>👤</span> Usuários</button>
+      </nav>
+      <div class="side-helper">
+        <img src="assets/mascote-amigao.png" alt="Mascote" />
+        <div><strong>Precisa de ajuda?</strong><small>O Mascote orienta você.</small></div>
+      </div>
+      <button id="logout" class="logout"><span>↪</span> Sair do sistema</button>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <div class="global-search"><span>⌕</span><input id="globalSearch" placeholder="Buscar clientes, veículos, produtos ou OS..." /></div>
+        <div class="top-actions"><button title="Notificações">🔔<b>4</b></button><button title="WhatsApp">☏</button><div class="user-pill"><div class="avatar">A</div><div><strong id="userName"></strong><small id="userRole">Administrador</small></div></div></div>
+      </header>
+      <main>
+        <div class="page-head"><div><small>Amigão Peças e Serviços</small><h1 id="pageTitle">Dashboard</h1></div><div id="today"></div></div>
+        <section id="page"></section>
+      </main>
+      <footer>© 2026 <strong>Amigão Peças e Serviços</strong> — Sistema de gestão profissional.</footer>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
